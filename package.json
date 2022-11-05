@@ -12,13 +12,34 @@
   "dependencies": {
     "@emotion/css": "^11.10.5",
     "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "babel": "^6.23.0",
     "next": "^13.0.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "@emotion/babel-plugin": "^11.10.5",
+    "@emotion/babel-preset-css-prop": "^11.10.0",
     "@types/node": "18.11.9",
     "@types/react": "18.0.24",
     "typescript": "4.8.4"
+  },
+  "babel": {
+    "presets": [
+      [
+        "next/babel",
+        {
+          "preset-react": {
+            "runtime": "automatic",
+            "importSource": "@emotion/react"
+          }
+        }
+      ]
+    ],
+    "plugins": [
+      "@emotion",
+      "@emotion/babel-plugin"
+    ]
   }
 }
